@@ -15,7 +15,7 @@ var unansweredTally = 0;
 
 
 $(document).ready(function() {
-// Create a function that creates the start button and initial screen
+
 
 function initialScreen() {
 	startScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Start Quiz</a></p>";
@@ -24,7 +24,7 @@ function initialScreen() {
 
 initialScreen();
 
-//Create a function, generateHTML(), that is triggered by the start button, and generates the HTML seen on the project video...
+
 
 $("body").on("click", ".start-button", function(event){
 	event.preventDefault();  
@@ -33,24 +33,24 @@ $("body").on("click", ".start-button", function(event){
 
 	timerWrapper();
 
-}); // Closes start-button click
+}); 
 
 $("body").on("click", ".answer", function(event){
-	//answeredQuestion = true;
+	
 	
 	selectedAnswer = $(this).text();
 	if(selectedAnswer === correctAnswers[questionCounter]) {
-		//alert("correct");
+		
 
 		clearInterval(theClock);
 		generateWin();
 	}
 	else {
-		//alert("wrong answer!");
+		
 		clearInterval(theClock);
 		generateLoss();
 	}
-}); // Close .answer click
+}); 
 
 $("body").on("click", ".reset-button", function(event){
 	
